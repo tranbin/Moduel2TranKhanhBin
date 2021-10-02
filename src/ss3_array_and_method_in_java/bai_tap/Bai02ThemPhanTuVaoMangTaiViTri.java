@@ -4,21 +4,32 @@ import java.util.Scanner;
 
 public class Bai02ThemPhanTuVaoMangTaiViTri {
     public static void main(String[] args) {
-        int[] a = {1, 2, 3, 4, 5, 6};
-        Scanner nhap = new Scanner(System.in);
-        System.out.println("Nhập vào số bạn cần thêm");
-        int so = nhap.nextInt();
-        System.out.println("Nhập vào vị trí mà bạn cần thêm số ");
-        int viTri = nhap.nextInt();
-
-        for (int i = a.length;i > viTri;i--){
-            a[i] = a[i-1];
+        String text = "";
+        int array_number[] = {1, 2, 3, 4, 5, 6, 0, 0, 0, 0};
+        int number;
+        int index;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Ban hay nhap phan tu muon them vao!!!");
+        number = Integer.parseInt(input.nextLine());
+        do {
+            System.out.println("Ban hay nhap vi tri phan tu them vao!!!");
+            index = Integer.parseInt(input.nextLine());
         }
-        a[viTri] = so;
-
-        for (int j = 0; j < a.length; j++) {
-            System.out.println(a[j]);
+        while (index >= 10);
+        // Them phan tu vao mang.
+        for (int i = 0; i < array_number.length; i++) {
+            if (index == i) {
+                for (int j = array_number.length - 1; j >= i + 1; j--) {
+                    array_number[j] = array_number[j - 1];
+                }
+                array_number[i] = number;
+            }
         }
+        //Duyet mang luu vao text
+        for (int i = 0; i < array_number.length; i++) {
+            text = text + array_number[i] + ",";
+        }
+        System.out.println("Mang sau khi them " + number + " vao vi tri " + " thu " + index + " la: " + text);
     }
 
 
