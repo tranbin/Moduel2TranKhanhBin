@@ -7,14 +7,14 @@ public class DocSoThanhChu {
         int number;
         Scanner input = new Scanner(System.in);
 // Nhap so can chuyen
-        do{
+        do {
             System.out.println("Ban hay nhap so can chuyen: ");
             number = Integer.parseInt(input.nextLine());
         }
 // Kiem tra neu so co 4 chu so hoac nho hon khong thi nhap lai
-        while (number/1000>=1||number<0);
-        if(number <=9){
-            switch (number){
+        while (number / 1000 >= 1 || number < 0);
+        if (number <= 9) {
+            switch (number) {
                 case 0:
                     System.out.println("Zero");
                     break;
@@ -46,10 +46,9 @@ public class DocSoThanhChu {
                     System.out.println("Nine");
                     break;
             }
-        }
-        else if(number<20){
-            int number_check = number%10;
-            switch (number_check){
+        } else if (number < 20) {
+            int number_check = number % 10;
+            switch (number_check) {
                 case 0:
                     System.out.println("Ten");
                     break;
@@ -81,13 +80,12 @@ public class DocSoThanhChu {
                     System.out.println("Nineteen");
                     break;
             }
-        }
-        else if(number<100){
-            int tens = number/10;
-            int ones = number%10;
+        } else if (number < 100) {
+            int tens = number / 10;
+            int ones = number % 10;
             String tens_letter = " ";
             String ones_letter = " ";
-            switch (tens){
+            switch (tens) {
                 case 2:
                     tens_letter = "Twenty";
                     break;
@@ -98,7 +96,7 @@ public class DocSoThanhChu {
                     tens_letter = "Forty";
                     break;
                 case 5:
-                    tens_letter= "Fifty";
+                    tens_letter = "Fifty";
                     break;
                 case 6:
                     tens_letter = "Sixty";
@@ -113,7 +111,7 @@ public class DocSoThanhChu {
                     tens_letter = "Ninety";
                     break;
             }
-            switch (ones){
+            switch (ones) {
                 case 0:
                     break;
                 case 1:
@@ -144,16 +142,15 @@ public class DocSoThanhChu {
                     ones_letter = "Nine";
                     break;
             }
-            System.out.println("Ket qua la: " +tens_letter +" " +ones_letter);
-        }
-        else{
-            int hunderd = number/100;
-            int tens = (number-hunderd*100)/10;
-            int ones = number%10;
+            System.out.println("Ket qua la: " + tens_letter + " " + ones_letter);
+        } else {
+            int hunderd = number / 100; /// lấy hàng trăm
+            int tens = (number - hunderd * 100) / 10; // lấy hàng chục
+            int ones = number % 10; // lấy hàng đơn vị
             String hundered_letter = " ";
             String tens_letter = " ";
             String ones_letter = " ";
-            switch (hunderd){
+            switch (hunderd) {
                 case 1:
                     hundered_letter = "One hundred";
                     break;
@@ -182,7 +179,7 @@ public class DocSoThanhChu {
                     hundered_letter = "Nine hundred";
                     break;
             }
-            switch (tens){
+            switch (tens) {
                 case 2:
                     tens_letter = "Twenty";
                     break;
@@ -193,7 +190,7 @@ public class DocSoThanhChu {
                     tens_letter = "Forty";
                     break;
                 case 5:
-                    tens_letter= "Fifty";
+                    tens_letter = "Fifty";
                     break;
                 case 6:
                     tens_letter = "Sixty";
@@ -208,7 +205,7 @@ public class DocSoThanhChu {
                     tens_letter = "Ninety";
                     break;
             }
-            switch (ones){
+            switch (ones) {
                 case 0:
                     break;
                 case 1:
@@ -239,7 +236,7 @@ public class DocSoThanhChu {
                     ones_letter = "Nine";
                     break;
             }
-            System.out.println("Ket qua la: " +hundered_letter +" " +tens_letter +" " +ones_letter);
+            System.out.println("Ket qua la: " + hundered_letter + " " + tens_letter + " " + ones_letter);
         }
     }
 }

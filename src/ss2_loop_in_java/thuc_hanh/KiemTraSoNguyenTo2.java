@@ -1,8 +1,8 @@
-package ss2_vong_lap_java.thuc_hanh;
+package ss2_loop_in_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class KiemTraSoNguyenTo {
+public class KiemTraSoNguyenTo2 {
     public static void main(String[] args) {
         int num;
         Scanner scanner = new Scanner(System.in);
@@ -13,7 +13,7 @@ public class KiemTraSoNguyenTo {
         }else{
             int i = 2 ;
             boolean check = true;
-            while (i < num){
+            while (i <= Math.sqrt(num)){
                 if (num % i == 0 ){
                     check = false;
                     break;
