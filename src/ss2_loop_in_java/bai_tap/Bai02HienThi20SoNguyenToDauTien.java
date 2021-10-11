@@ -4,7 +4,7 @@ public class Bai02HienThi20SoNguyenToDauTien {
     public static void main(String args[]) {
       /*  int status = 1;
         int num = 2;
-        for (int i = 2; i <= 20; ) {
+        for (int i = 2; i <= 20; i++) {
             for (int j = 2; j <= Math.sqrt(num); j++) {
                 if (num % j == 0) {
                     status = 0;
