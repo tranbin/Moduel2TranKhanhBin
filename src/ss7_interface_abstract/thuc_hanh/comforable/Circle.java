@@ -1,9 +1,7 @@
-package ss5_access_staticMethod_staticProperty.bai_tap.Circle;
+package ss7_interface_abstract.thuc_hanh.comforable;
 
-import ss7_interface_abstract.thuc_hanh.comforable.Shape;
-
-public class Circle extends Shape {
-    private double radius =1.0;
+public class Circle extends Shape{
+    private double radius = 1.0;
 
     public Circle() {
     }
@@ -34,8 +32,9 @@ public class Circle extends Shape {
 
     @Override
     public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                '}';
+        return "A Circle with radius="
+                + getRadius()
+                + ", which is a subclass of "
+                + super.toString();
     }
 }

@@ -1,9 +1,7 @@
-package ss5_access_staticMethod_staticProperty.bai_tap.Circle;
-
-import ss7_interface_abstract.thuc_hanh.comforable.Shape;
+package ss7_interface_abstract.bai_tap.Resizeable;
 
 public class Circle extends Shape {
-    private double radius =1.0;
+    private double radius = 1.0;
 
     public Circle() {
     }
@@ -12,7 +10,7 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    public Circle(String color, boolean filled, double radius) {
+    public Circle(double radius, String color, boolean filled) {
         super(color, filled);
         this.radius = radius;
     }
@@ -24,6 +22,7 @@ public class Circle extends Shape {
     public void setRadius(double radius) {
         this.radius = radius;
     }
+
     public double getArea() {
         return radius * radius * Math.PI;
     }
@@ -34,8 +33,14 @@ public class Circle extends Shape {
 
     @Override
     public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                '}';
+        return "A Circle with radius="
+                + getRadius()
+                + ", which is a subclass of "
+                + super.toString();
+    }
+
+    @Override
+    public void resize(double percent) {
+        this.radius*= (percent / 200);
     }
 }

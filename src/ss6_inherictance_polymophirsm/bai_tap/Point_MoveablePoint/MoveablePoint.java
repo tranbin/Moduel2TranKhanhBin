@@ -1,56 +1,56 @@
 package ss6_inherictance_polymophirsm.bai_tap.Point_MoveablePoint;
 
 public class MoveablePoint extends Point {
-    private float XSpeed ;
-    private float YSpeed;
+    private float xSpeed;
+    private float ySpeed;
 
     public MoveablePoint() {
     }
 
-    public MoveablePoint(float XSpeed, float YSpeed) {
-        this.XSpeed = XSpeed;
-        this.YSpeed = YSpeed;
+    public MoveablePoint(float xSpeed, float ySpeed) {
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
     }
 
-    public MoveablePoint(float x, float y, float XSpeed, float YSpeed) {
+    public MoveablePoint(float x, float y, float xSpeed, float ySpeed) {
         super(x, y);
-        this.XSpeed = XSpeed;
-        this.YSpeed = YSpeed;
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
     }
 
-    public float getXSpeed() {
-        return XSpeed;
+    public float getxSpeed() {
+        return xSpeed;
     }
 
-    public void setXSpeed(float XSpeed) {
-        this.XSpeed = XSpeed;
+    public void setxSpeed(float xSpeed) {
+        this.xSpeed = xSpeed;
     }
 
-    public float getYSpeed() {
-        return YSpeed;
+    public float getySpeed() {
+        return ySpeed;
     }
 
-    public void setYSpeed(float YSpeed) {
-        this.YSpeed = YSpeed;
+    public void setySpeed(float ySpeed) {
+        this.ySpeed = ySpeed;
     }
-    public void setSpeed(float XSpeed, float YSpeed){
-        this.XSpeed = XSpeed;
-        this.YSpeed = YSpeed;
+    public void setSpeed(float xSpeed, float ySpeed){
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
     }
     public float[] getSpeed(){
         float[] test = new float[2];
-        test[0] = this.XSpeed;
-        test[2] = this.YSpeed;
+        test[0] = this.xSpeed;
+        test[2] = this.ySpeed;
         return  test;
     }
 
     @Override
     public String toString() {
-        return "X : " +getX() + " Y : " + getY() + " speed " + " = " + getXSpeed() + "-" + getYSpeed();
+        return "X : " +getX() + " Y : " + getY() + " speed " + " = " + getxSpeed() + "-" + getySpeed();
     }
     public MoveablePoint move(){
-        this.setX(this.getX() + this.XSpeed);
-        this.setY(this.getY() + this.YSpeed);
+        this.setX(this.getX() + this.xSpeed);
+        this.setY(this.getY() + this.ySpeed);
         return this;
     }
 }
