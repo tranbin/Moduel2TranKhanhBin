@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class InsertionSort {
     public static void insertionSort(int[] array){
-        int pos, x;
+        int pos, x;   // 2 1 3 5 4
         for(int i = 1; i < array.length; i++){
             x = array[i];
             pos = i;
