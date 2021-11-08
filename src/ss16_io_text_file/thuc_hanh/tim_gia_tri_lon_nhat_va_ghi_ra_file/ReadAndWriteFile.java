@@ -6,6 +6,7 @@ import java.util.List;
 
 public class ReadAndWriteFile {
     public List<Integer> readFile(String filePath){
+        filePath = "ss16_io_text_file/thuc_hanh/tim_gia_tri_lon_nhat_va_ghi_ra_file/file.txt";
         List<Integer> numbers = new ArrayList<>();
         try {
             File file = new File(filePath);
