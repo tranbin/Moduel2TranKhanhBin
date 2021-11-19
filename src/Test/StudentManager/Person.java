@@ -1,17 +1,19 @@
-package Test;
+package Test.StudentManager;
 
 public class Person {
-    private int id ;
-    private String name;
-    private int age;
+    protected int id ;
+    protected String name;
+    protected int age;
+    protected  String address;
 
     public Person() {
     }
 
-    public Person(int id, String name, int age) {
+    public Person(int id, String name, int age, String address) {
         this.id = id;
         this.name = name;
         this.age = age;
+        this.address = address;
     }
 
     public int getId() {
@@ -38,12 +40,21 @@ public class Person {
         this.age = age;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", address='" + address + '\'' +
                 '}';
     }
 }
