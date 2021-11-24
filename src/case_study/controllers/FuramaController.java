@@ -1,8 +1,16 @@
 package case_study.controllers;
 
+
+import case_study.services.service_iml.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaController {
+    public static void main(String[] args) {
+
+        displayMenu();
+    }
+
     public static void displayMenu() {
         boolean check = true;
         while (check) {
@@ -15,18 +23,30 @@ public class FuramaController {
             Scanner sc = new Scanner(System.in);
 
             switch (sc.nextInt()) {
-                case 1: {
+                case 1:
                     displayEmployeeMenu();
                     break;
-                }
-                case 2 :{
-
-                }
+                case 2:
+                    displayCustomerMenu();
+                    break;
+                case 3:
+                    displayFacilityMenu();
+                    break;
+                case 4:
+                    displayBookingMenu();
+                    break;
+                case 5:
+                    displayPromotionMenu();
+                    break;
+                default:
+                    check = false;
             }
+            while (check) ;
         }
     }
 
     public static void displayEmployeeMenu() {
+        EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         boolean check = true;
         while (check) {
             System.out.println("1. Display list Employees");
@@ -37,12 +57,22 @@ public class FuramaController {
             Scanner sc = new Scanner(System.in);
 
             switch (sc.nextInt()) {
-                case 1: {
-
-                }
+                case 1:
+                    employeeService.display();
+                    break;
+                case 2:
+                    employeeService.add();
+                    break;
+                case 3:
+                    employeeService.edit();
+                    break;
+                default:
+                    check = false;
             }
+            while (check) ;
         }
     }
+
     public static void displayCustomerMenu() {
         boolean check = true;
         while (check) {
@@ -60,6 +90,7 @@ public class FuramaController {
             }
         }
     }
+
     public static void displayFacilityMenu() {
         boolean check = true;
         while (check) {
@@ -78,6 +109,7 @@ public class FuramaController {
         }
 
     }
+
     public static void displayBookingMenu() {
         boolean check = true;
         while (check) {
@@ -98,13 +130,13 @@ public class FuramaController {
         }
 
     }
+
     public static void displayPromotionMenu() {
         boolean check = true;
         while (check) {
             System.out.println("1. Display list customers use service");
-            System.out.println("2. Add new Facility");
-            System.out.println("3. Display list facility maintenance");
-            System.out.println("4. Return main menu");
+            System.out.println("2. Display list customers get vouchers");
+            System.out.println("3. Return main menu");
 
             Scanner sc = new Scanner(System.in);
 

@@ -10,7 +10,7 @@ public class Main {
     }
     private static void displayMainMenu(){
         System.out.println("1.Thêm \n2. Hiển thị \n3.Chỉnh sửa theo id \n4.Tìm kiếm theo tên" +
-                " \n5. Sắp xếp theo tên \n6.Xóa theo Id \n7.THOÁT \n");
+                " \n5.Sắp xếp theo tên \n6.Xóa theo Id \n7.THOÁT \n");
         String tmp = "";
         int choice = 0;
         do {

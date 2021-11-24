@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CSVHelper<T> {
-        List<String> read(String path) {
+    List<String> read(String path) {
         List<String> res = new ArrayList<>();
 
         try {
