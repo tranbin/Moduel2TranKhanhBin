@@ -2,6 +2,7 @@ package Test.Vehicle.service;
 
 import Test.Vehicle.data.ReadAndWriteFile;
 import Test.Vehicle.model.Motobike;
+import Test.Vehicle.validate.Validate;
 
 
 import java.util.ArrayList;
@@ -12,11 +13,16 @@ public class ServiceMotobike {
     public  final  String PATH_HANG_SX ="src/Test/Vehicle/data/HangSX.csv";
     public final String PATH = "src/Test/Vehicle/data/xeMay.csv";
     ReadAndWriteFile readAndWriteFile = new ReadAndWriteFile();
+
     Scanner scanner = new Scanner(System.in);
+
     public Motobike create(){
         List<String> list = readAndWriteFile.readFile(PATH_HANG_SX);
-        System.out.println("Ban hay nhap BKS");
-        String bks = scanner.nextLine();
+        String bks ="";
+        do {
+            System.out.println("Ban hay nhap BKS");
+            bks = scanner.nextLine();
+        }while(!Validate.validateNameMotobike(bks));
         System.out.println("Ban hay chon id hang sx");
         for(int i = 0;i<list.size();i++){
             System.out.println(list.get(i));

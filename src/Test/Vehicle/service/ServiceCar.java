@@ -2,6 +2,7 @@ package Test.Vehicle.service;
 
 import Test.Vehicle.data.ReadAndWriteFile;
 import Test.Vehicle.model.Car;
+import Test.Vehicle.validate.Validate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +14,14 @@ public class ServiceCar {
     Scanner scanner = new Scanner(System.in);
     ReadAndWriteFile readAndWriteFile = new ReadAndWriteFile();
     public Car create(){
+        Validate validate = new Validate();
         List<String> list = readAndWriteFile.readFile(PATH_HANG_SX);
-        System.out.println("Ban hay nhap BKS");
-        String bks = scanner.nextLine();
+        String bks ="";
+        do {
+            System.out.println("Ban hay nhap BKS");
+            bks = scanner.nextLine();
+        }while(!Validate.validateNameCar(bks));
+
         System.out.println("Ban hay chon id hang sx");
         for(int i = 0;i<list.size();i++){
             System.out.println(list.get(i));
@@ -37,6 +43,7 @@ public class ServiceCar {
         List<Car> list1 = getListCar();
         list1.add(create());
         readAndWriteFile.writeFile(PATH,list1);
+        System.out.println("Tạo thành công");
     }
 
     public List<Car> getListCar(){

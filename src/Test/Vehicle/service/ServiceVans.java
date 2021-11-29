@@ -2,6 +2,7 @@ package Test.Vehicle.service;
 
 import Test.Vehicle.data.ReadAndWriteFile;
 import Test.Vehicle.model.Vans;
+import Test.Vehicle.validate.Validate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +15,11 @@ public class ServiceVans {
     ReadAndWriteFile readAndWriteFile = new ReadAndWriteFile();
     public Vans create(){
         List<String> list = readAndWriteFile.readFile(PATH_HANG_SX);
-        System.out.println("Ban hay nhap BKS");
-        String bks = scanner.nextLine();
+        String bks ="";
+        do {
+            System.out.println("Ban hay nhap BKS");
+            bks = scanner.nextLine();
+        }while(!Validate.validateNameVans(bks));
         System.out.println("Ban hay chon id hang sx");
         for(int i = 0;i<list.size();i++){
             System.out.println(list.get(i));
